@@ -1,0 +1,30 @@
+.text-welcome{
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+p.text-novedades{
+    font-weight: 800;
+    font-size: 1rem;
+    color: #1976d2;
+}
+
+.enlaceNoticias{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a.vernoticias{
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.enlaceTienda, .enlaceCitas, .enlaceReservar{
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 800;
+    font-size: 1rem;
+
+}
