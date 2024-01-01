@@ -13,6 +13,8 @@ import { TiendaComponent } from './component/tienda/tienda.component';
 import { Error404Component } from './component/error404/error404.component';
 import { MicuentaComponent } from './component/micuenta/micuenta.component';
 import { TerminosycondicionesComponent } from './component/terminosycondiciones/terminosycondiciones.component';
+import { ofertasService } from './services/ofertas.service';
+import { firesbaseService } from './services/firebase.service';
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { TerminosycondicionesComponent } from './component/terminosycondiciones/
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ofertasService, firesbaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
