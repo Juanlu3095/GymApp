@@ -14,8 +14,13 @@ import { Error404Component } from './component/error404/error404.component';
 import { MicuentaComponent } from './component/micuenta/micuenta.component';
 import { TerminosycondicionesComponent } from './component/terminosycondiciones/terminosycondiciones.component';
 import { ofertasService } from './services/ofertas.service';
-import { firesbaseService } from './services/firebase.service';
-
+import { firebaseService } from './services/firebase.service';
+import { noticiasService } from './services/noticias.service';
+import { NoticiaIndividualComponent } from './component/noticia-individual/noticia-individual.component';
+import { ReservarCitaComponent } from './component/reservar-cita/reservar-cita.component';
+import { FormsModule } from '@angular/forms';
+import { userService } from './services/user.service';
+import { LoginGuardianService } from './services/guardian.service';
 
 @NgModule({
   declarations: [
@@ -30,13 +35,18 @@ import { firesbaseService } from './services/firebase.service';
     Error404Component,
     MicuentaComponent,
     TerminosycondicionesComponent,
+    NoticiaIndividualComponent,
+    ReservarCitaComponent
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserModule,
+    FormsModule
+    
   ],
-  providers: [ofertasService, firesbaseService],
+  providers: [ofertasService, firebaseService, noticiasService, userService, LoginGuardianService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

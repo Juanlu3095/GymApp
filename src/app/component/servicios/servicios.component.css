@@ -19,14 +19,22 @@
 @media only screen and (min-width: 768px) and (max-width: 1023px){
 
 /*FOTO HEADER*/
+.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .foto-servicios{
     height: 9rem;
     width: 100%;
 }
 
 .card{
-    width: 50%;
+    width: 45%;
 }
+
 }
 
 /*TODOS LOS DISPOSITIVOS*/

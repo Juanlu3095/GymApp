@@ -8,24 +8,13 @@
     <!--CAROUSEL NOTICIAS-->
     <div id="myCarousel" class="carousel slide container" data-bs-ride="carousel">
         <div class="carousel-inner w-100">
-            <div class="carousel-item active">
-                <div class="col-md-3">
+            
+            <div class="carousel-item" *ngFor="let noticias of noticias; let i = index" [ngClass]="{active: i === 0}">
+                <div class="col-md-8 mx-auto">
                     <div class="card card-body">
-                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=1">
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-                    <div class="card card-body">
-                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=2">
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-                    <div class="card card-body">
-                        <img class="img-fluid" src="https://via.placeholder.com/640x360?text=3">
+                        <img class="img-fluid" src="{{ noticias.imagen }}">
+                        <p class="titulo-noticia">{{ noticias.titulo }}</p>
+                        <a [routerLink]="['/noticia', noticias.id]" class="btn btn-primary">Ver noticia</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +53,7 @@
 
     <!--ACCESO RESERVAR-->
     <div class="ms-3 mt-4 mb-4">
-        <a href="citas" class="enlaceReservar">>Reserva tu sesión de entrenamiento</a>
+        <a href="reservar-cita" class="enlaceReservar">>Reserva tu sesión de entrenamiento</a>
         <p>Solicita día y hora para utilizar nuestras instalaciones. Nuestro equipo estará encantado de ayudarte.</p>
     </div>
 

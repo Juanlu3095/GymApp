@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { firesbaseService } from './services/firebase.service';
+import { firebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +9,10 @@ import { firesbaseService } from './services/firebase.service';
 export class AppComponent implements OnInit{
   title = 'GymApp';
 
-  constructor(private firebaseservice: firesbaseService){};
+  constructor(private firebaseservice: firebaseService){};
 
   ngOnInit(): void {
-    const app = this.firebaseservice.app;
-    const analytics = this.firebaseservice.analytics;
+    
   }
 
 }

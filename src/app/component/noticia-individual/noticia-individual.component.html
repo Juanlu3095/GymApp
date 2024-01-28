@@ -1,0 +1,20 @@
+
+<div class="noticia-container" *ngFor = "let item of noticias">
+
+    <div class="img-container">
+
+        <img src="{{ item.imagen }}" class="foto-noticias">
+
+    </div>
+
+    <div class="content-container" >
+
+        <p class="noticia-titulo">{{item.titulo}}</p>
+
+        <p class="noticia-fecha">{{item.fecha}}</p>
+    
+        <p class="noticia-contenido">{{item.texto}}</p>
+
+    </div>
+
+</div>

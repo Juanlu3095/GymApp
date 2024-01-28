@@ -1,0 +1,50 @@
+
+/*MÓVIL*/
+@media only screen and (max-width:767px){
+
+    /*FOTO HEADER*/
+    .foto-noticias{
+        height: 6rem;
+        width: 100%;
+    }
+    
+    .card{
+        margin: auto;
+        width: 80%;
+    }
+    
+    }
+    
+    /*TABLETA*/
+    @media only screen and (min-width: 768px) and (max-width: 1023px){
+    
+    /*FOTO HEADER*/
+    .card-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+    }
+    
+    .foto-noticias{
+        height: 9rem;
+        width: 100%;
+    }
+    
+    .card{
+        width: 45%;
+    }
+    
+    }
+    
+    /*TODOS LOS DISPOSITIVOS*/
+    p.title{
+        text-align: center;
+        font-weight: 800;
+        font-size: 1rem;
+    }
+    
+    .card{
+        text-align: center;
+    }

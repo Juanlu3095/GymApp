@@ -1,1 +1,50 @@
-<p>noticias works!</p>
+<!--IMAGEN-->
+<div>
+
+    <img src="../../../assets/foto-header-servicios160.jpg" class="foto-noticias">
+
+</div>
+
+<!--INFORMACIÓN-->
+<div>
+
+    <p class="title mt-3">Nuestras Novedades</p>
+
+</div>
+
+<!--ABOUT Y NOTICIAS-->
+<div class="ms-3 me-3">
+
+    <div class="about">
+        <p>
+            ¡Bienvenidos a nuestro sitio de noticias y novedades sobre el mundo del fitness y el bienestar! En este espacio,
+            nos complace compartir contigo las últimas tendencias, consejos expertos, historias inspiradoras y todo lo relacionado con el
+            emocionante viaje hacia una vida más saludable y activa.
+        </p>
+
+        <p>
+            Descubre artículos fascinantes, entrevistas con expertos en fitness, rutinas de entrenamiento 
+            efectivas, recetas saludables y mucho más. Estamos comprometidos a ser tu compañero en cada paso de tu viaje hacia un estilo
+            de vida activo y saludable.
+        </p>
+
+        <p>
+            ¡Únete a nuestra comunidad y prepárate para transformar tu bienestar con Total Form Gym!
+        </p>
+    
+    </div>
+
+    <br>
+
+    <!--CARDS DE LAS NOTICIAS-->
+    <div class="card-container">
+        <div class="card mb-3" *ngFor="let noticias of noticias">
+            <img src="{{ noticias.imagen }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-title mb-3">{{noticias.titulo}}</h4>
+              <a [routerLink]="['/noticia', noticias.id]" class="btn btn-primary">Leer más</a>
+            </div>
+        </div>
+        </div>
+
+</div>

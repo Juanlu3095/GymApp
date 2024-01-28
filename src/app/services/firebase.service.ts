@@ -6,12 +6,12 @@ import { getAnalytics } from "firebase/analytics";
 @Injectable({
   providedIn: 'root',
 })
-export class firesbaseService {
+export class firebaseService {
   
 
   constructor() {}
 
-  firebaseConfig = {
+  public firebaseConfig = {
     apiKey: "AIzaSyCi2_i1cp-9cs2yWMLpXLXrUYRWUJyons8",
     authDomain: "agenda-9b9ad.firebaseapp.com",
     projectId: "agenda-9b9ad",
@@ -22,11 +22,12 @@ export class firesbaseService {
   };
   
   // Initialize Firebase
-  app = initializeApp(this.firebaseConfig);
-  analytics = getAnalytics(this.app);
-  db = getFirestore(this.app);
+  public app = initializeApp(this.firebaseConfig);
+  public analytics = getAnalytics(this.app);
+  public db = getFirestore(this.app);
 
   ngOnInit(): void {
     
   }
+  
 }

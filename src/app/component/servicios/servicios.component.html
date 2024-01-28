@@ -67,14 +67,17 @@
 
     <br>
 
-    <div class="card">
+    <div class="card-container">
+    <div class="card mb-3" *ngFor="let ofertas of oferta">
         <img src="../../../assets/foto-tarifa-entreno.jpg" class="card-img-top" alt="...">
         <div class="card-body">
-          <h4 class="card-title">Principiante</h4>
-          <p class="card-text"><b>20€/mes.</b></p>
-          <p class="card-text">Adquiere las bases del entrenamiento. 2 días/semana.</p>
+          <h4 class="card-title">{{ofertas.nombre}}</h4>
+          <p class="card-text"><b>{{ofertas.precio}}€/mes</b></p>
+          <p class="card-text">{{ofertas.descripcion}}</p>
           <a href="citas" class="btn btn-primary">Reservar</a>
         </div>
-      </div>
+    </div>
+    </div>
 
+    <!--<SPAN>{{ oferta | json }}</SPAN>-->
 </div>
