@@ -18,7 +18,7 @@
 
       <div>
 
-          <button class="btn btn-danger mt-3" type="submit">Enviar</button>
+          <button class="btn btn-danger mt-3" type="submit" (click)="cargandoMostrar()">Enviar</button>
 
       </div>
 
@@ -27,6 +27,8 @@
 </div>
 
 <span class="msg-error">{{MensajeError}}</span>
+
+<span class="msg-cargando msg-cargando-d-none">⌛ Cargando...</span>
 
 <br><br>
 

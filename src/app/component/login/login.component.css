@@ -26,6 +26,15 @@
     justify-content: center;
 }
 
+.msg-cargando-d-none{
+    display: none;
+}
+
+.msg-cargando-d-block{
+    display: flex;
+    justify-content: center;
+}
+
 /*TABLET*/
 @media only screen and (min-width: 768px) and (max-width:1023px){
     .form-container{

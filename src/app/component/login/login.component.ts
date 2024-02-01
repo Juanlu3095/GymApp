@@ -26,6 +26,20 @@ export class LoginComponent implements OnInit{
   rolUsuario:string; // 1=cliente, 2=admin
   private db = this.firebaseService.db;
 
+  //MUESTRA EL SPAN CARGANDO
+  cargandoMostrar(){
+    const reloj = document.getElementsByClassName("msg-cargando");
+    reloj[0].classList.add('msg-cargando-d-block');
+    reloj[0].classList.remove('msg-cargando-d-none');
+  }
+
+  //QUITA EL SPAN CARGANDO
+  cargandoQuitar(){
+    const reloj = document.getElementsByClassName("msg-cargando");
+    reloj[0].classList.remove('msg-cargando-d-block');
+    reloj[0].classList.add('msg-cargando-d-none');
+  }
+
   async getPermisosUsuario(uid:string){
     const obtenerPermisos = doc(this.db, "users", uid)
     const obtenerDoc = await getDoc(obtenerPermisos);
@@ -68,6 +82,7 @@ export class LoginComponent implements OnInit{
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      this.cargandoQuitar();
 
       if (errorCode == 'auth/invalid-email'){
         console.log('Por favor, introduzca un email válido.');

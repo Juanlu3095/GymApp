@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { Observable } from "rxjs";
 
 @Injectable()
@@ -29,8 +29,20 @@ export class userService {
            resolve(user); //se devuelve el valor del user, que puede ser nulo si no hay logueo
         }, reject); //Si hay error durante el proceso se ejecuta el rechazo
      });
-      
-      
+        
+    }
+
+    obtenerObservableLogin(): Observable<User | null> {
+      return new Observable((observer) => {
+        const auth = getAuth();
+  
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          observer.next(user);
+        });
+  
+        // Importante: Desuscribirse cuando el observable deja de ser necesario
+        return () => unsubscribe();
+      });
     }
 
     //OBTENER LOS DATOS DEL USUARIO LOGUEADO

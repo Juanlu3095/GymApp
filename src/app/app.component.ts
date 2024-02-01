@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { firebaseService } from './services/firebase.service';
+import { userService } from './services/user.service';
+import { Observable, from, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +11,32 @@ import { firebaseService } from './services/firebase.service';
 export class AppComponent implements OnInit{
   title = 'GymApp';
 
-  constructor(private firebaseservice: firebaseService){};
+  constructor(private firebaseservice: firebaseService, private userService: userService){};
 
-  ngOnInit(): void {
+  loginOk:Observable<any>;
+  public loginSubscription: Subscription;
+
+  comprobaruser(){
+    this.loginOk = from(this.userService.comprobarLogin());
     
   }
 
-}
+  ngOnInit(): void {
+      this.loginOk = this.userService.obtenerObservableLogin();
+      this.loginSubscription = this.loginOk.subscribe((loggedIn) => {
+        // Aquí puedes realizar acciones dependiendo del estado de autenticación
+        // Por ejemplo, actualizar variables, mostrar/ocultar elementos, etc.
+        if (loggedIn) {
+          console.log('Usuario autenticado, mostrar menú.');
+          // Realiza acciones cuando el usuario está autenticado
+        } else {
+          console.log('Usuario no autenticado, ocultar menú.');
+          // Realiza acciones cuando el usuario no está autenticado
+        }
+      });
+    }
+  }
+
+
+
+

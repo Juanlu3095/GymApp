@@ -16,16 +16,16 @@ import { AuthGuard, LoginGuardianService } from './services/guardian.service';
 
 const routes: Routes = [
   {path:'', component: InicioComponent, canActivate: [LoginGuardianService]},
-  {path:'servicios', component: ServiciosComponent},
-  {path:'noticias', component: NoticiasComponent},
-  {path:'noticia/:indice', component: NoticiaIndividualComponent},
-  {path:'tienda', component: TiendaComponent},
-  {path:'citas', component: CitasComponent},
-  {path:'reservar-cita', component: ReservarCitaComponent},
-  {path:'micuenta', component: MicuentaComponent},
-  {path:'terminos', component: TerminosycondicionesComponent},
+  {path:'servicios', component: ServiciosComponent, canActivate: [LoginGuardianService]},
+  {path:'noticias', component: NoticiasComponent, canActivate: [LoginGuardianService]},
+  {path:'noticia/:indice', component: NoticiaIndividualComponent, canActivate: [LoginGuardianService]},
+  {path:'tienda', component: TiendaComponent, canActivate: [LoginGuardianService]},
+  {path:'citas', component: CitasComponent, canActivate: [LoginGuardianService]},
+  {path:'reservar-cita', component: ReservarCitaComponent, canActivate: [LoginGuardianService]},
+  {path:'micuenta', component: MicuentaComponent, canActivate: [LoginGuardianService]},
+  {path:'terminos', component: TerminosycondicionesComponent, canActivate: [LoginGuardianService]},
   {path:'login', component: LoginComponent},
-  {path: '**', component: Error404Component}
+  {path: '**', component: Error404Component, canActivate: [LoginGuardianService]}
 ];
 
 @NgModule({
