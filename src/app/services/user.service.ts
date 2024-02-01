@@ -32,10 +32,12 @@ export class userService {
         
     }
 
+    //DEVUELVE UN OBSERVABLE QUE REFLEJA EL ESTADO DE LA AUTENTICACIÓN EN TIEMPO REAL CON onAuthStateChanged
     obtenerObservableLogin(): Observable<User | null> {
-      return new Observable((observer) => {
+      return new Observable((observer) => { //crea un nuevo observable
         const auth = getAuth();
   
+        //FUNCIÓN PARA NOTIFICAR AL OBSERVABLE CUANDO SE VEA UN CAMBIO CON AuthStateChanged DE UN EVENTO Y DEVUELVE UN USER
         const unsubscribe = onAuthStateChanged(auth, (user) => {
           observer.next(user);
         });
